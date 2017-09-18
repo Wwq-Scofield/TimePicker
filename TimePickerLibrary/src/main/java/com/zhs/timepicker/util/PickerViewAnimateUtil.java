@@ -4,6 +4,9 @@ import android.view.Gravity;
 
 import com.zhs.timepicker.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  * Created by Sai on 15/8/9.
@@ -29,5 +32,13 @@ public class PickerViewAnimateUtil
 			return isInAnimation ? R.anim.slide_in_bottom : R.anim.slide_out_bottom;
 		}
 		return INVALID;
+	}
+
+
+
+	public  static String getTime(Date date)
+	{
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		return format.format(date);
 	}
 }
