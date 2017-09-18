@@ -1,5 +1,6 @@
 package com.zhs.timepicker.util;
 
+import android.content.Context;
 import android.view.Gravity;
 
 import com.zhs.timepicker.R;
@@ -41,4 +42,10 @@ public class PickerViewAnimateUtil
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.format(date);
 	}
+
+
+    public static int dip2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
 }

@@ -15,6 +15,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -27,6 +28,7 @@ import com.zhs.timepicker.util.InertiaTimerTask;
 import com.zhs.timepicker.util.LoopViewGestureListener;
 import com.zhs.timepicker.util.MessageHandler;
 import com.zhs.timepicker.util.OnItemSelectedRunnable;
+import com.zhs.timepicker.util.PickerViewAnimateUtil;
 import com.zhs.timepicker.util.SmoothScrollTimerTask;
 
 
@@ -69,7 +71,7 @@ public class WheelView extends View
 	int dividerColor;
 
 	// 条目间距倍数
-	static final float lineSpacingMultiplier = 1.3F;
+	static final float lineSpacingMultiplier = 1.2F;
 	public boolean isLoop;
 
 	// 第一条线Y坐标值
@@ -112,7 +114,7 @@ public class WheelView extends View
 	private int drawCenterContentStart = 0;// 中间选中文字开始绘制位置
 	private int drawOutContentStart = 0;// 非中间文字开始绘制位置
 	private static final float SCALECONTENT = 0.8F;// 非中间文字则用此控制高度，压扁形成3d错觉
-	private static final float CENTERCONTENTOFFSET = 6;// 中间文字文字居中需要此偏移值
+	private static final float CENTERCONTENTOFFSET =5;// 中间文字文字居中需要此偏移值
 	private static final String GETPICKERVIEWTEXT = "getPickerViewText";// 反射的方法名
 
 	public WheelView(Context context)
@@ -167,7 +169,7 @@ public class WheelView extends View
 		paintCenterText = new Paint();
 		paintCenterText.setColor(textColorCenter);
 		paintCenterText.setAntiAlias(true);
-		paintCenterText.setTextScaleX(1.1F);
+//		paintCenterText.setTextScaleX(1.1F);
 //		paintCenterText.setTypeface(Typeface.MONOSPACE);
 		paintCenterText.setTextSize(textSize);
 
@@ -425,7 +427,8 @@ public class WheelView extends View
 		{
 			int drawRightContentStart = measuredWidth - getTextWidth(paintCenterText, label);
 			// 靠右并留出空隙
-			canvas.drawText(label, drawRightContentStart - CENTERCONTENTOFFSET, centerY, paintCenterText);
+			Log.d("wwq","label:"+label+""+"---"+drawRightContentStart);
+			canvas.drawText(label, drawRightContentStart - PickerViewAnimateUtil.dip2px(context,10), centerY, paintCenterText);
 		}
 		counter = 0;
 		while (counter < itemsVisible)
