@@ -90,6 +90,19 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
 		int minute = calendar.get(Calendar.MINUTE);
 		wheelTime.setPicker(year, month, day, hours, minute);
 	}
+	@Override
+	public void show() {
+		super.show();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTimeInMillis(System.currentTimeMillis());
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		int hours = calendar.get(Calendar.HOUR_OF_DAY);
+		int minute = calendar.get(Calendar.MINUTE);
+		wheelTime.setPicker(year, month, day, hours, minute);
+
+	}
 
 	// /**
 	// * 指定选中的时间，显示选择器

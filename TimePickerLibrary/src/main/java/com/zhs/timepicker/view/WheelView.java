@@ -71,7 +71,7 @@ public class WheelView extends View
 	int dividerColor;
 
 	// 条目间距倍数
-	static final float lineSpacingMultiplier = 1.2F;
+	static final float lineSpacingMultiplier = 1.4F;
 	public boolean isLoop;
 
 	// 第一条线Y坐标值
@@ -155,7 +155,7 @@ public class WheelView extends View
 
 		initPaints();
 
-		setTextSize(16F);
+		setTextSize(22F);
 	}
 
 	private void initPaints()
@@ -427,8 +427,14 @@ public class WheelView extends View
 		{
 			int drawRightContentStart = measuredWidth - getTextWidth(paintCenterText, label);
 			// 靠右并留出空隙
-			Log.d("wwq","label:"+label+""+"---"+drawRightContentStart);
-			canvas.drawText(label, drawRightContentStart - PickerViewAnimateUtil.dip2px(context,10), centerY, paintCenterText);
+			if(label.equals("年")){
+				canvas.drawText(label, drawRightContentStart - PickerViewAnimateUtil.dip2px(context,5), centerY, paintCenterText);
+			}else if(label.equals("月")){
+				canvas.drawText(label, drawRightContentStart - PickerViewAnimateUtil.dip2px(context,15), centerY, paintCenterText);
+			}else if(label.equals("日")){
+				canvas.drawText(label, drawRightContentStart -PickerViewAnimateUtil.dip2px(context,7) , centerY, paintCenterText);
+			}
+
 		}
 		counter = 0;
 		while (counter < itemsVisible)

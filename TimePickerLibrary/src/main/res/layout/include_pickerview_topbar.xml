@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pickerview_bg_topbar">
+    android:background="@android:color/white">
 
     <Button
         android:id="@+id/btnCancel"
@@ -10,11 +10,10 @@
         android:layout_height="fill_parent"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|left"
-        android:paddingLeft="@dimen/pickerview_topbar_paddingleft"
-        android:paddingRight="@dimen/pickerview_topbar_paddingright"
         android:text="@string/pickerview_cancel"
-        android:textColor="@drawable/selector_pickerview_btn"
-        android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+        android:layout_marginLeft="12dp"
+        android:textColor="#FF38B1FC"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -33,10 +32,9 @@
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
-        android:gravity="center_vertical|left"
-        android:paddingLeft="@dimen/pickerview_topbar_paddingright"
-        android:paddingRight="@dimen/pickerview_topbar_paddingleft"
         android:text="@string/pickerview_submit"
-        android:textColor="@drawable/selector_pickerview_btn"
-        android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="12dp"
+        android:textColor="#FF38B1FC"
+        android:textSize="15dp"/>
 </RelativeLayout>
