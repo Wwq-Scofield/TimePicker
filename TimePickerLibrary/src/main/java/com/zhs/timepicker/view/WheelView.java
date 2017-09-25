@@ -131,11 +131,11 @@ public class WheelView extends View
 
 		if (attrs != null)
 		{
-			TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.wheelview, 0, 0);
-			mGravity = a.getInt(R.styleable.wheelview_gravity, Gravity.CENTER);
-			textColorOut = a.getColor(R.styleable.wheelview_textColorOut, textColorOut);
-			textColorCenter = a.getColor(R.styleable.wheelview_textColorCenter, textColorCenter);
-			dividerColor = a.getColor(R.styleable.wheelview_dividerColor, dividerColor);
+			TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyWheelview, 0, 0);
+			mGravity = a.getInt(R.styleable.MyWheelview_gravity, Gravity.CENTER);
+			textColorOut = a.getColor(R.styleable.MyWheelview_textColorOut, textColorOut);
+			textColorCenter = a.getColor(R.styleable.MyWheelview_textColorCenter, textColorCenter);
+			dividerColor = a.getColor(R.styleable.MyWheelview_dividerColor, dividerColor);
 		}
 		initLoopView(context);
 	}
